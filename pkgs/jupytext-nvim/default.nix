@@ -1,7 +1,8 @@
 {
-	vimUtils,
-	fetchFromGitHub
-}: vimUtils.buildVimPlugin {
+  vimUtils,
+  fetchFromGitHub,
+}:
+vimUtils.buildVimPlugin {
   name = "jupytext-nvim";
   src = fetchFromGitHub {
     owner = "GCBallesteros";

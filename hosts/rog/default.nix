@@ -5,7 +5,6 @@
   self,
   ...
 }: {
-
   imports = [
     ./hardware-configuration.nix
   ];
@@ -16,38 +15,37 @@
 
   networking.hostName = "dragonblade316"; # Define your hostname.
 
-	networking.firewall = {
-		enable = true;
-		allowedTCPPorts = [ 53317 631 ];
-		allowedUDPPorts = [ 53317 631 ];
-	};
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [53317 631];
+    allowedUDPPorts = [53317 631];
+  };
 
-  services.xserver.enable = true;    
+  services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.defaultSession = "hyprland";
 
-	hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  services.printing = {
+    listenAddresses = ["*:631"];
+    allowFrom = ["all"];
+    browsing = true;
+    defaultShared = true;
+  };
 
-	services.printing = {
-  	listenAddresses = [ "*:631" ];
-  	allowFrom = [ "all" ];
-  	browsing = true;
-  	defaultShared = true;
-	};
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
 
-	services.avahi = {
-  enable = true;
-  nssmdns = true;
-  openFirewall = true;
-  publish = {
-    	enable = true;
-    	userServices = true;
-  	};
-	};
-
-	services.udev.packages = [ pkgs.mixxx ];
+  services.udev.packages = [pkgs.mixxx];
 
   #<nvidia>
   # Make sure opengl is enabled
@@ -68,7 +66,6 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     # Modesetting is needed for most wayland compositors
     modesetting.enable = true;
 
@@ -82,7 +79,7 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.production;
-		# package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   hardware.nvidia.prime = {
@@ -99,18 +96,14 @@
 
   #</nvidia>
 
-
-  programs.hyprland = { # or wayland.windowManager.hyprland
+  programs.hyprland = {
+    # or wayland.windowManager.hyprland
     enable = true;
     xwayland.enable = true;
     enableNvidiaPatches = true;
   };
 
+  services.blueman.enable = true;
 
-	services.blueman.enable = true;
-
-	services.flatpak.enable = true;
-
+  services.flatpak.enable = true;
 }
-
-

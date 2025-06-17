@@ -1,6 +1,6 @@
 {
-	services.mako = {
-		enable = true;
-		borderRadius = 5;
-	};
+  services.mako = {
+    enable = true;
+    borderRadius = 5;
+  };
 }

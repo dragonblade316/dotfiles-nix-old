@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-	home.packages = with pkgs; [
-		ngrok
-		parsec-bin
-	];
+  home.packages = with pkgs; [
+    ngrok
+    parsec-bin
+  ];
 }

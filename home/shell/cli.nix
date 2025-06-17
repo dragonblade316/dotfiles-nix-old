@@ -4,23 +4,23 @@
     unzip
     unrar
 
-		btop
+    btop
 
     ripgrep
-		fzf
+    fzf
 
-		imagemagick
+    imagemagick
 
-		neofetch
+    neofetch
 
-		#busybox is already on the system but its version of wget does not support a spesific option that lutris needs
-		wget
+    #busybox is already on the system but its version of wget does not support a spesific option that lutris needs
+    wget
   ];
 
-	programs.zoxide = {
-		enable = true;
-		enableFishIntegration = true;
-		enableNushellIntegration = true;
-		options = ["--cmd cd"];
-	};
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+    options = ["--cmd cd"];
+  };
 }

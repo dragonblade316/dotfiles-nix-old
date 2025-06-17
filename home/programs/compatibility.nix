@@ -1,10 +1,7 @@
-{
-	pkgs,
-	...
-}: {
-	home.packages = with pkgs; [
-		winetricks
-		protontricks
-		bottles
-	];
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    winetricks
+    protontricks
+    bottles
+  ];
 }

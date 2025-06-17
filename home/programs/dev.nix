@@ -1,19 +1,22 @@
-{pkgs, inputs, ...}: {
-	
-	home.packages = with pkgs; [
-		pkgs.rust-bin.stable.latest.default
-		rust-analyzer
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  home.packages = with pkgs; [
+    pkgs.rust-bin.stable.latest.default
+    rust-analyzer
 
-		ccls
-		libclang
+    ccls
+    libclang
 
-		nixos-shell
-		
-		python3
-		nodePackages_latest.pyright
+    nixos-shell
 
-		jdt-language-server
-		kotlin-language-server
-		#nix-index
-	];
+    python3
+    nodePackages_latest.pyright
+
+    jdt-language-server
+    kotlin-language-server
+    #nix-index
+  ];
 }

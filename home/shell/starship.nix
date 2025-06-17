@@ -14,7 +14,7 @@
         style_user = "white bold";
         style_root = "black bold";
         format = "[$user]($style) ";
-        disabled = true;  # disable in powershell
+        disabled = true; # disable in powershell
         show_always = false;
       };
 

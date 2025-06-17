@@ -1,7 +1,6 @@
-
 {
-    imports = [
-      ../../programs/git.nix
-      ../../themeing.nix
-    ];
+  imports = [
+    ../../programs/git.nix
+    ../../themeing.nix
+  ];
 }

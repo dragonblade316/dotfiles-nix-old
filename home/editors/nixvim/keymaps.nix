@@ -1,33 +1,33 @@
 {
-	programs.nixvim.extraConfigLuaPre = ''vim.g.mapleader = " "'';
-	
-	programs.nixvim.keymaps = [
-		{
-			action = "<cmd>NvimTreeToggle<cr>";
-			key = "<leader>e";
-		}
-		
-		{
-			action = "<cmd>TroubleToggle<cr>";
-			key = "<leader>r";
-		}
+  programs.nixvim.extraConfigLuaPre = ''vim.g.mapleader = " "'';
 
-		{
-			action = "<cmd>Telescope live_grep<cr>";
-			key = "<leader>/";
-		}
+  programs.nixvim.keymaps = [
+    {
+      action = "<cmd>NvimTreeToggle<cr>";
+      key = "<leader>e";
+    }
 
-		{
-			action = "<cmd>Telescope find_files<cr>";
-			key = "<leader>f";
-		}
+    {
+      action = "<cmd>TroubleToggle<cr>";
+      key = "<leader>r";
+    }
 
-		{
-			action = "<cmd>lua require('dap').continue() <cr>";
-			key = "<leader>l";
-		}
+    {
+      action = "<cmd>Telescope live_grep<cr>";
+      key = "<leader>/";
+    }
 
-		{
+    {
+      action = "<cmd>Telescope find_files<cr>";
+      key = "<leader>f";
+    }
+
+    {
+      action = "<cmd>lua require('dap').continue() <cr>";
+      key = "<leader>l";
+    }
+
+    {
       mode = "n";
       key = "<leader>b";
       action = "<cmd>lua require('dap').toggle_breakpoint()<CR>";
@@ -38,7 +38,7 @@
       };
     }
 
-		{
+    {
       mode = "n";
       key = "<leader>di";
       action = "<cmd>lua require('dap').step_into()<CR>";
@@ -49,7 +49,7 @@
       };
     }
 
-		{
+    {
       mode = "n";
       key = "<leader>do";
       action = "<cmd>lua require('dap').step_out()<CR>";
@@ -60,7 +60,7 @@
       };
     }
 
-		{
+    {
       mode = "n";
       key = "<leader>dr";
       action = "<cmd>lua function() require('dap').repl.open()<CR>";
@@ -70,6 +70,5 @@
         desc = "Repl";
       };
     }
-		
-	];
+  ];
 }

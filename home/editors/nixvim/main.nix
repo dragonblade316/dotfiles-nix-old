@@ -1,20 +1,20 @@
 {
-	programs.nixvim.plugins = {
-		better-escape = {
-			enable = true;
-		};
-
-		nvim-autopairs = {
-     	enable = true;
-   	};
-
-		treesitter = {
-    	enable = true;
+  programs.nixvim.plugins = {
+    better-escape = {
+      enable = true;
     };
 
-		auto-save = {
-			enable = true;
-			enableAutoSave = true;
-		};
-	};
+    nvim-autopairs = {
+      enable = true;
+    };
+
+    treesitter = {
+      enable = true;
+    };
+
+    auto-save = {
+      enable = true;
+      enableAutoSave = true;
+    };
+  };
 }
